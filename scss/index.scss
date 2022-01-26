@@ -1,0 +1,1751 @@
+@import "./config/all";
+@import "./component/all";
+html {
+  overflow-x: hidden;
+  height: auto;
+  overflow-anchor: none;
+}
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  color: #4c4c4c;
+  position: relative;
+  overflow: hidden;
+  max-width: 100vw;
+}
+
+// Roboto font
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+// kv
+#kv {
+  height: 950px;
+  width: 100%;
+  position: relative;
+  padding-bottom: 120px;
+  @include pad {
+    height: 500px;
+    padding-bottom: 10px;
+  }
+  @include laptop {
+    height: auto;
+    min-height: 520px;
+  }
+  @include mobile {
+    height: auto;
+    padding-top: 72px;
+    padding-bottom: 10px;
+  }
+  .slider-wrapper {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 830px;
+    top: 0;
+    left: 0;
+    @include pad {
+      top: 75px;
+      height: 391px;
+    }
+    @include laptop {
+      height: auto;
+      position: relative;
+      left: auto;
+      top: auto;
+    }
+    @media (min-width: 769px) and (max-width: 860px) {
+      padding-top: 40px;
+    }
+    @include mobile {
+      top: 130px;
+    }
+    .container {
+      width: 100%;
+      height: 830px;
+      position: relative;
+      outline: none;
+      @include pad {
+        height: 391px;
+      }
+      @include laptop {
+        height: auto;
+      }
+    }
+    img {
+      width: 1078px;
+      position: absolute;
+      top: 0;
+      left: calc(50% - 269px);
+      @include pad {
+        width: 478px;
+        left: calc(50% - 94px);
+      }
+      @include laptop {
+        position: relative;
+        width: 62vw;
+        left: 35vw;
+      }
+      @include mobile {
+        position: initial;
+        object-fit: contain;
+        object-position: center center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .slick-dots {
+    position: absolute;
+    top: 816px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include pad {
+      top: 490px;
+    }
+    @include laptop {
+      top: auto;
+      bottom: 10px;
+    }
+    @include mobile {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      top: 530px;
+    }
+    li {
+      background-color: #364487;
+      width: 10px;
+      height: 5px;
+      border-radius: 5px;
+      margin: 0 12px;
+      cursor: pointer;
+      @include pad {
+        width: 8px;
+        height: 4px;
+        border-radius: 4px;
+        margin: 0 6px;
+      }
+      &.slick-active {
+        background-color: #ed6b4e;
+      }
+      button {
+        font-size: 0;
+      }
+    }
+  }
+  .kv-logo {
+    user-select: none;
+    width: 534px;
+    position: absolute;
+    top: 84px;
+    right: calc(50% + 65px);
+    @include laptop {
+      width: 310px;
+      top: 68px;
+      right: auto;
+      left: 80px;
+    }
+    @include pad {
+      width: 310px;
+      top: 68px;
+      right: calc(50% + 18px);
+    }
+    @include mobile {
+      display: block;
+      width: 300px;
+      margin: auto;
+      position: relative;
+      top: auto;
+      right: auto;
+      margin-bottom: 375px;
+    }
+  }
+  .kv-links-container {
+    width: 410px;
+    height: 400px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    position: absolute;
+    top: 351px;
+    right: calc(50% + 191px);
+    padding-top: 60px;
+    @include pad {
+      width: 293px;
+      height: 286px;
+      box-shadow: 0 0 14.3px 0 rgba(0, 0, 0, 0.2);
+      top: 200px;
+      left: auto;
+      right: calc(50% + 43px);
+      padding-top: 43px;
+    }
+    @include laptop {
+      right: auto;
+      left: 80px;
+      padding-top: 43px;
+      top: 200px;
+    }
+    @include mobile {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: 329px;
+      height: 321px;
+      margin: auto;
+      padding-top: 48px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 63px;
+      height: 6px;
+      background-color: #ed6b4e;
+      top: 27px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      @include pad {
+        width: 45px;
+        height: 4px;
+        top: 19px;
+      }
+      @include mobile {
+        width: 50px;
+        height: 4.3px;
+        top: 22px;
+      }
+    }
+    p {
+      font-size: 31px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 38px;
+      line-height: 1.45;
+      letter-spacing: 3px;
+      @include pad {
+        font-size: 22px;
+        margin-bottom: 27px;
+        letter-spacing: 2px;
+      }
+      @include mobile {
+        font-size: 22px;
+        letter-spacing: 2.2px;
+        margin-bottom: 34px;
+      }
+    }
+    .main-link {
+      cursor: pointer;
+      width: 166px;
+      height: 55px;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 21px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      position: relative;
+      @include pad {
+        width: 119px;
+        height: 39px;
+        border-radius: 3.6px;
+        font-size: 16px;
+        letter-spacing: 1.6px;
+      }
+      @include mobile {
+        width: 133px;
+        height: 44px;
+        font-size: 18px;
+        letter-spacing: 1.8px;
+      }
+      &:nth-of-type(1) {
+        margin-bottom: 40px;
+        @include pad {
+          margin-bottom: 28px;
+        }
+        @include mobile {
+          margin-bottom: 32px;
+        }
+      }
+    }
+    .other-links {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #ddccaf;
+      padding-top: 2px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      @include pad {
+        padding-top: 1px;
+      }
+      a {
+        color: #4c4c4c;
+        letter-spacing: 1.9px;
+        font-size: 19px;
+        display: flex;
+        height: 60px;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff5e0;
+        width: 33%;
+        transition: 0.3s;
+        @include pad {
+          height: 43px;
+          font-size: 14px;
+          letter-spacing: 1.4px;
+        }
+        @include mobile {
+          height: 48px;
+          font-size: 16px;
+          letter-spacing: 1.6px;
+        }
+        &:hover {
+          transition: 0.3s;
+          background-color: #f7e8d2;
+        }
+        img {
+          margin-right: 5px;
+          width: 25px;
+          @include pad {
+            width: 18px;
+            margin-right: 1.8px;
+          }
+          @include mobile {
+            width: 20px;
+            margin-right: 3px;
+          }
+        }
+      }
+    }
+  }
+  .kv-scroll {
+    position: absolute;
+    bottom: 120px;
+    right: calc(50% + 660px);
+    width: 1px;
+    height: 130px;
+    background-color: #364387;
+    @include pad {
+      height: 100px;
+      right: calc(50% + 362px);
+      bottom: 0px;
+    }
+    @include laptop {
+      right: auto;
+      left: 40px;
+    }
+    @include mobile {
+      display: none;
+    }
+    .circle {
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      background-color: #ebbb6e;
+      border-radius: 50%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      animation: kv-circle infinite 2s ease-out;
+      @include pad {
+        width: 9px;
+        height: 9px;
+      }
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    bottom: -1px;
+    left: 0;
+    background-image: url(../img/bg.svg);
+    background-repeat: no-repeat;
+    background-size: 2048px 400px;
+    background-position: center bottom;
+    @media (min-width: 2048px) {
+      background-size: 100%;
+    }
+    @include pad {
+      height: 200px;
+      background-size: 100%;
+    }
+    @include mobile {
+      bottom: 240px;
+    }
+  }
+  &::after {
+    @include mobile {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 245px;
+      bottom: 0;
+      left: 0;
+      background-color: #fff5e0;
+      z-index: -1;
+    }
+  }
+}
+
+// 區域標題共用
+.sec-title-wrap {
+  position: relative;
+  img {
+    position: absolute;
+    width: 51px;
+    top: -7px;
+    right: calc(50% + 40px);
+    @include pad {
+      width: 44px;
+      top: -9px;
+      right: calc(50% + 12px);
+    }
+    @include mobile {
+      right: calc(50% + 27px);
+    }
+  }
+  h3 {
+    position: relative;
+    font-size: 31px;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    line-height: 1.45;
+    margin-bottom: 4px;
+    text-align: center;
+    @include pad {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+  }
+  p {
+    position: relative;
+    font-size: 17px;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    color: #888888;
+    margin-bottom: 14px;
+    text-align: center;
+    @include pad {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+  }
+  &::after {
+    content: "";
+    display: block;
+    margin: auto;
+    width: 62px;
+    height: 5px;
+    background-color: #ed6b4e;
+  }
+}
+
+// 信貸產品
+#section1 {
+  background-color: #fff5e0;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 20px;
+  width: 100vw;
+  @include pad {
+    padding-top: 60px;
+  }
+  @include mobile {
+    padding-top: 80px;
+  }
+  .deco-text {
+    position: absolute;
+    font-weight: bold;
+    color: #f7e8d2;
+    font-size: 191px;
+    line-height: 1.17;
+    top: -28px;
+    right: calc(50% + 34px);
+    @include pad {
+      top: 90px;
+      font-size: 96px;
+      right: calc(50% + 40px);
+    }
+    @include laptop {
+      right: auto;
+      left: 100px;
+    }
+    @include mobile {
+      top: 140px;
+      font-size: 64px;
+      right: calc(50% - 20px);
+    }
+  }
+  // 裝飾氣球
+  .sec1-deco-girl {
+    position: absolute;
+    width: 345px;
+    height: 444px;
+    left: calc(50% + 526px);
+    bottom: -90px;
+    @include pad {
+      height: 298px;
+      width: 232px;
+      bottom: -210px;
+      left: calc(50% + 250px);
+    }
+    @include laptop {
+      left: auto;
+      right: -35px;
+    }
+    @include mobile {
+      height: 193px;
+      width: 150px;
+      bottom: -170px;
+      left: calc(50% + 95px);
+    }
+    .ball {
+      width: 62.3%;
+      position: absolute;
+      top: 0;
+      right: 7%;
+    }
+    .girl {
+      position: absolute;
+      width: 78.26%;
+      height: 97.74%;
+      bottom: 0;
+      left: 0;
+      background-image: url(../img/girl.png);
+      background-size: 100% 100%;
+      background-position: bottom left;
+      background-repeat: no-repeat;
+      animation: girl infinite 2s steps(1);
+    }
+  }
+  .sec1-deco-circle {
+    position: absolute;
+    width: 379px;
+    right: calc(50% + 469px);
+    bottom: -120px;
+    @include pad {
+      width: 280px;
+      right: calc(50% + 222px);
+      bottom: -70px;
+    }
+    @include laptop {
+      right: auto;
+      left: -120px;
+    }
+    @include mobile {
+      width: 200px;
+      right: calc(50% + 63px);
+      bottom: -80px;
+    }
+  }
+  .sec-title-wrap {
+    margin-bottom: 68px;
+    @include pad {
+      margin-bottom: 40px;
+    }
+  }
+  .sec1-tags {
+    display: flex;
+    width: 1200px;
+    margin: auto;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    @include pad {
+      width: 708px;
+    }
+    @include mobile {
+      width: 330px;
+      display: block;
+    }
+    .tag-container {
+      width: 297px;
+      height: 206px;
+      position: relative;
+      padding-top: 65px;
+      padding-left: 36px;
+      color: #ed6b4e;
+      background-color: #fff;
+      cursor: pointer;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+      @include pad {
+        width: 173px;
+        height: 134px;
+        padding-top: 40px;
+        padding-left: 8px;
+      }
+      @include mobile {
+        width: 100%;
+        height: 128px;
+        padding-top: 34px;
+        padding-left: 19px;
+        margin-bottom: 4px;
+      }
+      &.now {
+        @include mobile {
+          margin-bottom: 0;
+        }
+        &::after {
+          transform: translateX(-50%) translateY(0);
+          transition: 0.3s;
+          transition-delay: 0.3s;
+          opacity: 1;
+        }
+        .deco-toggle {
+          @include mobile {
+            background-image: url(../img/sec1/more-up.svg);
+          }
+        }
+      }
+      &.now,
+      &:hover {
+        color: #fff;
+        .bg {
+          &::before {
+            transition: 0.3s;
+            opacity: 1;
+            bottom: -50%;
+            left: -50%;
+            @include mobile {
+              left: -30%;
+              bottom: -70%;
+            }
+          }
+        }
+        img {
+          transform: scale(1);
+          transition: 0.3s;
+          transition-delay: 0.15s;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 20px 19px 0 19px;
+        border-color: #ed6b4e transparent transparent transparent;
+        transform: translateX(-50%) translateY(-100%);
+        pointer-events: none;
+        opacity: 0;
+        transition: 0;
+        transition-delay: 0;
+        @include pad {
+          border-width: 10px 10px 0 10px;
+        }
+        @include mobile {
+          display: none;
+        }
+      }
+      .bg {
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        background-color: #fff;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 110%;
+          left: 110%;
+          width: 500px;
+          height: 500px;
+          border-radius: 50%;
+          background-color: #ed6b4e;
+          opacity: 0;
+          transition: 0.3s;
+          @include mobile {
+            width: 600px;
+            height: 600px;
+          }
+        }
+      }
+      .deco-tag {
+        width: 131px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: scale(0);
+        transform-origin: top right;
+        transition: 0.3s;
+        @include pad {
+          width: 76px;
+        }
+        @include mobile {
+          width: 100px;
+        }
+      }
+      .deco-toggle {
+        @include mobile {
+          width: 25px;
+          height: 25px;
+          background-image: url(../img/sec1/more-down.svg);
+          transition: 0.3s;
+          position: absolute;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position-x: center center;
+          bottom: 12px;
+          right: 10px;
+        }
+      }
+      h3 {
+        position: relative;
+        font-size: 25px;
+        letter-spacing: 0.1em;
+        line-height: 1.45;
+        margin-bottom: 19px;
+        font-weight: bold;
+        @include pad {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+      }
+      p {
+        position: relative;
+        font-size: 17px;
+        letter-spacing: 0.1em;
+        line-height: 1.45;
+      }
+    }
+  }
+  .sec1-cards-wrapper {
+    width: 1200px;
+    background-color: #fff;
+    margin: auto;
+    position: relative;
+    @include pad {
+      width: 708px;
+    }
+    @include mobile {
+      width: 330px;
+      margin-bottom: 4px;
+      position: initial;
+    }
+    .card {
+      padding: 60px 0 80px;
+      display: none;
+      position: relative;
+      @include pad {
+        padding: 32px 0;
+      }
+      @include mobile {
+        padding: 32px 0 30px;
+      }
+      &.show {
+        display: block;
+      }
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.05;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        @include mobile {
+          background-size: auto 410px;
+          background-position: center bottom;
+        }
+      }
+      &.card1 {
+        &::before {
+          background-image: url(../img/sec1/bg1.png);
+        }
+      }
+      &.card2 {
+        &::before {
+          background-image: url(../img/sec1/bg2.png);
+        }
+      }
+      &.card3 {
+        &::before {
+          background-image: url(../img/sec1/bg3.png);
+        }
+      }
+      &.card4 {
+        &::before {
+          background-image: url(../img/sec1/bg4.png);
+        }
+      }
+      .top-area {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 74px;
+        padding-left: 100px;
+        @include pad {
+          margin-bottom: 30px;
+          padding-left: 35px;
+          justify-content: flex-start;
+        }
+        @include mobile {
+          padding-left: 0;
+          display: block;
+          margin-bottom: 36px;
+        }
+        .left {
+          width: 191px;
+          margin-right: 80px;
+          @include pad {
+            width: 120px;
+            margin-right: 50px;
+          }
+          @include mobile {
+            margin-right: 0;
+            width: calc(100% - 34px);
+            margin: auto;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgb(155, 155, 155);
+          }
+          .title {
+            font-size: 30px;
+            letter-spacing: 0.1em;
+            line-height: 1.15;
+            margin-bottom: 15px;
+            font-weight: bold;
+            @include pad {
+              font-size: 22px;
+              margin-bottom: 8px;
+            }
+            @include mobile {
+              display: none;
+            }
+          }
+          .text {
+            font-size: 16px;
+            letter-spacing: 0.1em;
+            line-height: 1.5;
+            margin-bottom: 40px;
+            color: #888888;
+            @include pad {
+              font-size: 15px;
+              margin-bottom: 19px;
+            }
+            @include mobile {
+              font-size: 16px;
+            }
+            br {
+              display: none;
+              @include pad {
+                display: block;
+              }
+              @include mobile {
+                display: none;
+              }
+            }
+          }
+          a {
+            width: 140px;
+            height: 46.4px;
+            border-radius: 4.2px;
+            // background-color: #ed6b4e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            letter-spacing: 0.1em;
+            color: #fff;
+            font-weight: bold;
+            @include pad {
+              width: 122px;
+              height: 36px;
+              font-size: 16px;
+            }
+            @include mobile {
+              width: 147px;
+              height: 45px;
+              font-size: 18px;
+            }
+          }
+        }
+        .right {
+          height: 230px;
+          border-left: 1px solid rgb(155, 155, 155);
+          display: flex;
+          align-items: center;
+          @include pad {
+            height: 135px;
+          }
+          @include mobile {
+            border-left: none;
+            height: auto;
+            justify-content: center;
+            padding: 25px 5px 0;
+          }
+          .feature {
+            padding: 0 68px;
+            border-right: 1px solid rgb(155, 155, 155);
+            @include pad {
+              padding: 0 25px;
+            }
+            @include mobile {
+              padding: 0;
+              border-right: none;
+            }
+            &:last-of-type {
+              border-right: none;
+            }
+            .title {
+              font-weight: bold;
+              font-size: 25px;
+              letter-spacing: 0.1;
+              margin-bottom: 7px;
+              @include pad {
+                font-size: 16px;
+                margin-bottom: 4px;
+              }
+              @include mobile {
+                font-size: 14px;
+                margin-bottom: 3px;
+              }
+              span {
+                color: #ed6b4e;
+                font-size: 61px;
+                margin-right: 15px;
+                @include pad {
+                  font-size: 36px;
+                  margin-right: 8px;
+                }
+                @include mobile {
+                  font-size: 28px;
+                  margin-right: 6px;
+                }
+              }
+            }
+            .text {
+              font-size: 16px;
+              letter-spacing: 0.1em;
+              color: #888888;
+              line-height: 1.5;
+              @include pad {
+                font-size: 14px;
+              }
+            }
+          }
+          .deco-line-m {
+            display: none;
+            @include mobile {
+              display: block;
+              transform: scaleX(0.5);
+              width: 1px;
+              min-width: 1px;
+              max-width: 1px;
+              height: 35px;
+              background-color: #9b9b9b;
+              margin: 0 10px;
+            }
+          }
+        }
+      }
+      .bottom-area {
+        display: flex;
+        justify-content: flex-start;
+        padding: 0 60px;
+        @include pad {
+          padding: 0 27px;
+        }
+        @include mobile {
+          display: block;
+          justify-content: initial;
+          padding: 0;
+          width: 230px;
+          margin: auto;
+          position: relative;
+          left: 10px;
+        }
+        .item {
+          width: 240px;
+          height: 222px;
+          position: relative;
+          background-image: url(../img/sec1/vector.svg);
+          background-size: 220px 204px;
+          background-position: bottom left;
+          background-repeat: no-repeat;
+          outline: none;
+          margin-right: 40px;
+          @include pad {
+            width: 144px;
+            height: 133px;
+            background-size: 144px 133px;
+            margin-right: 25px;
+          }
+          @include mobile {
+            width: 230px;
+            height: 206px;
+            background-size: 204px 189px;
+            background-position: bottom left;
+            background-repeat: no-repeat;
+            padding-top: 17px;
+            padding-right: 28px;
+            margin-right: 0;
+            margin: auto;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 57px;
+            height: 13px;
+            background-image: url(../img/sec1/icon-next.svg);
+            top: 50%;
+            left: 85%;
+            background-size: contain;
+            background-position: center right;
+            background-repeat: no-repeat;
+            @include pad {
+              width: 32px;
+              height: 8px;
+              left: 90%;
+            }
+            @include mobile {
+              display: none;
+            }
+          }
+          &:last-of-type {
+            margin-right: 0;
+            &::after {
+              display: none;
+            }
+          }
+          .deco-index {
+            font-size: 61px;
+            font-weight: bold;
+            position: absolute;
+            top: 0;
+            left: 0;
+            line-height: 1.16;
+            color: #fcf0d9;
+            @include pad {
+              font-size: 40px;
+              top: -13px;
+            }
+            @include mobile {
+              font-size: 55px;
+              top: 0;
+            }
+          }
+          .inner {
+            padding-top: 45px;
+            padding-right: 20px;
+            text-align: center;
+            @include pad {
+              padding-top: 16px;
+              padding-right: 0;
+            }
+            @include mobile {
+              padding-top: 27px;
+            }
+            .title {
+              font-size: 21px;
+              line-height: 1.45;
+              margin-bottom: 9px;
+              font-weight: bold;
+              @include pad {
+                font-size: 16px;
+                margin-bottom: 7px;
+              }
+              @include mobile {
+                font-size: 18px;
+                margin-bottom: 12px;
+              }
+            }
+            .text {
+              font-size: 17px;
+              line-height: 1.45;
+              color: #888888;
+              padding: 0 0.5em;
+              @include pad {
+                font-size: 14px;
+                margin-bottom: 0;
+              }
+              @include mobile {
+                font-size: 14px;
+              }
+              br {
+                display: block;
+              }
+            }
+            a {
+              margin: auto;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 140px;
+              height: 46px;
+              border-radius: 4px;
+              color: #fff;
+              font-size: 19px;
+              font-weight: bold;
+              letter-spacing: 0.1em;
+              position: absolute;
+              bottom: 20px;
+              left: 40px;
+              @include pad {
+                width: 91px;
+                height: 30px;
+                border-radius: 3px;
+                font-size: 16px;
+                bottom: 13px;
+                left: 0;
+                right: 0;
+                margin: auto;
+              }
+              @include mobile {
+                width: 129px;
+                height: 43px;
+                border-radius: 4px;
+                font-size: 18px;
+                bottom: 29px;
+                left: 36px;
+                right: auto;
+              }
+            }
+            .deco-money {
+              position: absolute;
+              width: 90px;
+              right: 28px;
+              bottom: 10px;
+              @include pad {
+                width: 52px;
+                right: 7px;
+                bottom: 3px;
+              }
+              @include mobile {
+                width: 80px;
+                right: 30px;
+                bottom: 5px;
+              }
+            }
+          }
+        }
+        .slick-dots {
+          font-size: 0;
+          display: flex;
+          justify-content: center;
+          padding-right: 20px;
+          margin-top: 30px;
+          li {
+            height: 4px;
+            width: 8px;
+            border-radius: 2px;
+            background-color: #4c4c4c;
+            margin: 0 10px;
+            &.slick-active {
+              background-color: #ed6b4e;
+            }
+          }
+        }
+        .slick-arrow {
+          width: 46px;
+          height: 30px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+          position: absolute;
+          top: 50%;
+          z-index: 1;
+          outline: none;
+          &.slick-prev {
+            background-image: url(../img/sec1/icon-prev.svg);
+            left: -15%;
+          }
+          &.slick-next {
+            background-image: url(../img/sec1/icon-next.svg);
+            right: -5%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 常見問題
+#section2 {
+  padding-top: 144px;
+  background-color: #fff5e0;
+  position: relative;
+  padding-bottom: 130px;
+  @include pad {
+    padding-top: 75px;
+    padding-bottom: 90px;
+  }
+  @include mobile {
+    padding-bottom: 85px;
+  }
+  .deco-text {
+    position: absolute;
+    font-weight: bold;
+    color: #f7e8d2;
+    font-size: 191px;
+    line-height: 1.17;
+    letter-spacing: 0.1em;
+    top: 115px;
+    left: calc(50% + 289px);
+    @include pad {
+      font-size: 96px;
+      top: 124px;
+      left: calc(50% + 117px);
+    }
+    @include laptop {
+      left: auto;
+      right: 200px;
+    }
+    @include mobile {
+      font-size: 64px;
+      top: 140px;
+      left: calc(50% + 59px);
+    }
+  }
+  .sec-title-wrap {
+    margin-bottom: 60px;
+    @include mobile {
+      max-width: 240px;
+      margin: auto;
+      margin-bottom: 25px;
+    }
+  }
+  .card-wrapper {
+    width: 1150px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 20px;
+    @include pad {
+      width: 620px;
+      margin-bottom: 15px;
+    }
+    @include mobile {
+      width: 313px;
+      margin-bottom: 20px;
+      left: -9px;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    &.show {
+      .card-question {
+        background-color: #364487;
+        color: #fff;
+        transition: 0.3s;
+        .toggle {
+          &::before,
+          &::after {
+            content: "";
+            transition: 0.3s;
+          }
+          &::before {
+            opacity: 1;
+            transform: rotate(0deg);
+          }
+          &::after {
+            opacity: 0;
+            transform: rotate(-90deg);
+          }
+        }
+        .deco-line {
+          background-color: #fff;
+        }
+      }
+    }
+    .card-question {
+      height: 65px;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      color: #364487;
+      background-color: #fff;
+      cursor: pointer;
+      position: relative;
+      transition: 0.3s;
+      &:hover {
+        background-color: #364487;
+        color: #fff;
+        transition: 0.3s;
+        .deco-line {
+          transition: 0.3s;
+          background-color: #fff;
+        }
+      }
+      @include pad {
+        height: 55px;
+      }
+      @include mobile {
+        height: auto;
+        padding: 12px 14px;
+        flex-wrap: wrap;
+      }
+      .toggle {
+        position: absolute;
+        right: -17px;
+        width: 40px;
+        height: 40px;
+        border: #fc7e62 2px solid;
+        border-radius: 5px;
+        @include pad {
+          width: 30px;
+          height: 30px;
+          right: -14px;
+        }
+        @include mobile {
+          width: 25px;
+          height: 25px;
+          right: -15px;
+        }
+        &::before,
+        &::after {
+          content: "";
+          width: 24px;
+          height: 2px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          background-color: #fc7e62;
+          transition: 0.3s;
+          @include pad {
+            width: 18px;
+          }
+          @include mobile {
+            width: 15px;
+          }
+        }
+        &::before {
+          transform: rotate(-90deg);
+        }
+        &::after {
+          transform: rotate(0);
+          opacity: 1;
+        }
+      }
+      span {
+        font-weight: bold;
+        font-size: 31px;
+        @include pad {
+          font-size: 22px;
+        }
+        @include mobile {
+          font-size: 18px;
+        }
+      }
+      .deco-line {
+        width: 40px;
+        height: 2px;
+        background-color: #364487;
+        margin: 0 10px;
+        @include mobile {
+          height: 1px;
+        }
+      }
+      p {
+        font-size: 19px;
+        line-height: 1.5;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        @include pad {
+          font-size: 16px;
+          font-weight: normal;
+        }
+        @include mobile {
+          margin-top: 6px;
+          width: 100%;
+          min-width: 100%;
+          padding-left: 30px;
+        }
+      }
+    }
+    .card-answer {
+      display: none;
+      background-color: #f7e8d2;
+      padding: 30px 48px;
+      @include pad {
+        padding: 20px 24px;
+      }
+      @include mobile {
+        padding: 20px 10px;
+      }
+      li {
+        background-color: #fff;
+        font-size: 17px;
+        letter-spacing: 0.1em;
+        margin-bottom: 15px;
+        padding: 5px 11px;
+        line-height: 1.45;
+        display: inline-block;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        @include pad {
+          font-size: 14px;
+          padding: 7px 16px;
+        }
+        @include mobile {
+          padding: 7px 15px;
+        }
+      }
+      a {
+        color: #dd583b;
+        text-decoration: underline;
+      }
+    }
+  }
+  .deco-bubble1 {
+    position: absolute;
+    width: 385px;
+    bottom: -14px;
+    right: calc(50% + 564px);
+    @include pad {
+      width: 213px;
+      right: calc(50% + 241px);
+    }
+    @include laptop {
+      right: auto;
+      left: 30px;
+    }
+    @include mobile {
+      width: 197px;
+      right: calc(50% + 55px);
+    }
+  }
+  .deco-bubble2 {
+    position: absolute;
+    width: 459px;
+    right: -1px;
+    bottom: -326px;
+    @include pad {
+      width: 224px;
+      bottom: -174px;
+    }
+    @include mobile {
+      width: 173px;
+      bottom: -130px;
+    }
+  }
+}
+
+// 注意事項
+#section3 {
+  background-color: #ddccaf;
+  padding: 60px 0;
+  position: relative;
+  @include pad {
+    padding: 60px 0 120px;
+  }
+  @include mobile {
+    padding: 60px 0 106px;
+  }
+  .deco-boy {
+    position: absolute;
+    width: 132px;
+    height: 410px;
+    top: -166px;
+    right: calc(50% + 590px);
+    background-image: url(../img/boy.png);
+    background-size: contain;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    animation: boy infinite 2s steps(1);
+    @include pad {
+      width: 70px;
+      height: 217px;
+      top: -80px;
+      right: calc(50% + 300px);
+    }
+    @include laptop {
+      right: auto;
+      left: 127px;
+    }
+    @include mobile {
+      width: 67px;
+      height: 208px;
+      top: -94px;
+      right: calc(50% + 96px);
+    }
+  }
+  .deco-tree {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% + 617px);
+    width: 90px;
+    @include pad {
+      width: 58px;
+      left: calc(50% + 312px);
+    }
+    @include mobile {
+      width: 42px;
+      left: calc(50% + 129px);
+    }
+  }
+  .title {
+    font-size: 31px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.15;
+    margin-bottom: 60px;
+    @include pad {
+      font-size: 22px;
+      margin-bottom: 45px;
+    }
+    @include mobile {
+      margin-bottom: 20px;
+    }
+    &::after {
+      content: "";
+      display: block;
+      margin: auto;
+      width: 62px;
+      height: 5px;
+      background-color: #ed6b4e;
+      margin-top: 15px;
+    }
+  }
+  ol {
+    width: 1080px;
+    margin: auto;
+    @include pad {
+      width: 600px;
+    }
+    @include mobile {
+      width: 315px;
+    }
+    li {
+      font-size: 17px;
+      letter-spacing: 0.1em;
+      line-height: 1.7;
+      list-style: decimal;
+      color: #43300f;
+      @include pad {
+        font-size: 14px;
+      }
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+// fix btn
+.fix-link-wrapper {
+  position: fixed;
+  z-index: 98;
+  right: 40px;
+  top: 20%;
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 1280px) and (max-width: 1400px) {
+    right: 0;
+  }
+  @include pad {
+    left: auto;
+    right: 15px;
+  }
+  @include mobile {
+    bottom: 19px;
+    right: 0;
+    left: 0;
+    flex-direction: row;
+    justify-content: center;
+    top: auto;
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+  }
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.3s;
+  }
+  a {
+    position: relative;
+    &.evt-link {
+      .content {
+        background-color: #ed6b4e;
+        transition: 0.3s;
+      }
+      &:hover {
+        .content {
+          background-color: #dd583b;
+          transition: 0.3s;
+        }
+      }
+    }
+    .content {
+      position: relative;
+      width: 38px;
+      padding: 17px 10px 24px;
+      z-index: 1;
+      color: #fff;
+      font-size: 17px;
+      border-radius: 10px;
+      letter-spacing: 0.1em;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+      @include mobile {
+        font-size: 18px;
+        letter-spacing: 1.8px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 158px;
+        height: 48px;
+        border-radius: 20px;
+        padding: 0;
+        span {
+          position: relative;
+          z-index: 2;
+        }
+      }
+      img {
+        display: block;
+        width: 16px;
+        position: relative;
+        z-index: 2;
+        margin-bottom: 13px;
+        @include mobile {
+          margin-bottom: 0;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
+
+// cookie
+.cookie-wrapper {
+  position: fixed;
+  font-weight: normal;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background-color: #364487;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include pad {
+    height: auto;
+    padding: 24px 30px;
+  }
+  @include mobile {
+    padding: 25px 15px;
+  }
+  .content-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #fff;
+    letter-spacing: 0.1em;
+    @include mobile {
+      flex-direction: column;
+    }
+    p {
+      line-height: 1.45;
+      a {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+    #cookie-btn {
+      padding: 8px 20px;
+      font-size: 16px;
+      line-height: 1.5;
+      cursor: pointer;
+      word-break: keep-all;
+      position: relative;
+      @include pad {
+        margin-left: 40px;
+      }
+      @include mobile {
+        margin-left: 0;
+        margin-top: 25px;
+      }
+    }
+  }
+}
+
+// svg morph btn
+.bouncybtn {
+  position: relative;
+  &.orange {
+    svg {
+      path {
+        fill: #ed6b4e;
+        transition: 0.3s;
+      }
+    }
+    &:hover {
+      svg {
+        path {
+          fill: #dd583b;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+  &.yellow {
+    svg {
+      path {
+        fill: #f4b145;
+        transition: 0.3s;
+      }
+    }
+    &:hover {
+      svg {
+        path {
+          fill: #e8a336;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+  button {
+    width: 100%;
+    height: 100%;
+    outline: none;
+  }
+  .morph-shape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all 500ms ease;
+  }
+  svg {
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: scaleX(1.2);
+  }
+  .bouncytxt {
+    cursor: pointer;
+    position: relative;
+  }
+}

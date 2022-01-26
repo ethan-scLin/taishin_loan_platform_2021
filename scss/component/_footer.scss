@@ -1,0 +1,47 @@
+footer {
+  height: 56px;
+  display: flex;
+  font-family: "MicroSoft Jhenghei", serif;
+  font-weight: bold;
+  font-size: 12px;
+  width: 100%;
+  .left-wrapper {
+    background-color: #d70c18;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 60%;
+    min-width: 900px;
+    @include pad {
+      min-width: initial;
+      width: 100%;
+    }
+    p {
+      width: 900px;
+      text-align: center;
+      @include pad {
+        width: 100%;
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+  .right-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #878789;
+    width: 40%;
+    @include pad {
+      display: none;
+    }
+    img {
+      width: 113px;
+      margin-left: 40px;
+      @media screen and (min-width: 1280px) and (max-height: 740px) {
+        width: 75px;
+      }
+    }
+  }
+}
